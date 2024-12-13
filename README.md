@@ -1,0 +1,2 @@
+# midimadness
+MIDI Madness Hackathon
