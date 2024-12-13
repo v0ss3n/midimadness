@@ -1,0 +1,30 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            MIDI MADNESS
+tagline:          'MIDI Madness Hackathon by Veerle Pennock & Michelle Vossen'
+description:      'MIDI Madness Hackathon by Veerle Pennock & Michelle Vossen'
+url:              https://v0ss3n.github.io/midimadness
+baseurl:          
+
+author:
+  name:           'Michelle Vossen'
+  url:            https://michellevossen.com
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/v0ss3n/midimadness
+
+include: ['_posts']
+plugins: [jekyll-paginate]
+relative_permalinks: false
