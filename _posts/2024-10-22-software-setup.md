@@ -31,3 +31,4 @@ You can also connect something conductive, like a conductive spool knitted sampl
 <div class="videowrapper"><video width="480" height="360" autoplay loop muted>
   <source src="{{ site.baseurl }}/assets\videos\keyboard-glove.mp4" type="video/mp4"></video>
 </div>
+
