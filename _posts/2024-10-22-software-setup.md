@@ -12,7 +12,7 @@ In these examples we're using a [Seeed Studio XIAO ESP32S3](https://wiki.seeedst
 For a quick start, follow these steps in the Arduino IDE (assuming you have it installed already; if not, download the latest stable version and launch it):
 
 1. Navigate to ```File > Preferences```, and paste this URL in the 'Additional Boards Manager URLs': <https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json>
-2. Now, navigate to ```Tools > Board > Boards Manager...```, type the keyword "esp32" in the search box, select 2.0.17 download the latest version and install it.
+2. Now, navigate to ```Tools > Board > Boards Manager...```, type the keyword "esp32" in the search box, download the latest version and install it.
 3. Plug in your board and select the board and port from the dropdown menu in the top left of the interface. Click on 'Select other board and port' and look for the XIAO_ESP32S3. 
 
 ![]({{ site.baseurl }}/assets/images/arduino-ide-board.png)
@@ -32,3 +32,15 @@ You can also connect something conductive, like a conductive spool knitted sampl
   <source src="{{ site.baseurl }}/assets\videos\keyboard-glove.mp4" type="video/mp4"></video>
 </div>
 
+## To do
+- Libraries > welke installeren? duidelijk maken
+
+![](https://www.researchgate.net/publication/305311624/figure/download/tbl1/AS:614279237603340@1523466991268/Each-MIDI-number-corresponds-to-an-octave-listed-in-the-left-column-and-a-note-listed-on.png)
+
+- <https://github.com/bartjakobs/MidiMadnessMaker>
+
+---
+
+# Wroom
+
+![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.iotstarters.com%2Fwp-content%2Fuploads%2F2020%2F04%2FESP32_pin_details-e1586188935940.jpg&f=1&nofb=1&ipt=d6ede6d3e0661abda80bf721ebda983fce545a48d9ce1b6b18082cbfd7d04053&ipo=images)

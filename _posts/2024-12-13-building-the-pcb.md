@@ -56,7 +56,7 @@ Audio options
 - Do not power the PCB via the power jack while also powering it via USB!
 
 ## 2. Soldering instructions
-Find out where goes what component in the interative BOM. [You can find the interactive BOM here (opens in a new tab)](../../../midimadnessmaker-ibom.html){:target="_blank"}
+Find out where goes what component in the interative BOM. [You can find the interactive BOM here (opens in a new tab)](../../../midimadness/midimadnessmaker-ibom.html){:target="_blank"}
 
 **BEFORE YOU START! Please pay attention to the following:**
 - The two 47Ω resistors going to the MIDI jack need to cross each other, because we made a mistake there. :)
