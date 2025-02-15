@@ -41,6 +41,3 @@ You can also connect something conductive, like a conductive spool knitted sampl
 ### Libraries
 Some code examples need libraries - they're at the top of the code so check it out there! For the BLE example you need to make a modification; click [here](https://v0ss3n.github.io/midimadness/midi-bluetooth/) for more on that.
 
-![](https://www.researchgate.net/publication/305311624/figure/download/tbl1/AS:614279237603340@1523466991268/Each-MIDI-number-corresponds-to-an-octave-listed-in-the-left-column-and-a-note-listed-on.png)
-
-

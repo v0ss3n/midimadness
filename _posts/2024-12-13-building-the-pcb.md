@@ -32,12 +32,6 @@ Your kit comes with the following components:
 - 1x 8Ω speaker
 - 1x speaker mono jack
 
-<!-- nog toevoegen aan kitjes
-- 47 ohm x2
-- 100 ohm x1
-- female headers x2 -->
-
-
 Not included but very useful are the following:
 
 Power options
