@@ -12,6 +12,9 @@ Congratulations with your MIDI Madness Maker DIY kit! Let's get it up and runnin
 3. Programming and testing the board
 4. Attaching your own sensors!
 
+![]({{ site.baseurl }}/assets/images/overview.jpg)
+
+
 ## 1. Check your kit
 ### Bill of Materials
 Your kit comes with the following components:
