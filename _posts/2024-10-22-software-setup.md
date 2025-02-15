@@ -12,14 +12,20 @@ In these examples we're using a [Seeed Studio XIAO ESP32S3](https://wiki.seeedst
 For a quick start, follow these steps in the Arduino IDE (assuming you have it installed already; if not, download the latest stable version and launch it):
 
 1. Navigate to ```File > Preferences```, and paste this URL in the 'Additional Boards Manager URLs': <https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json>
-2. Now, navigate to ```Tools > Board > Boards Manager...```, type the keyword "esp32" in the search box, download the latest version and install it.
+2. Now, navigate to ```Tools > Board > Boards Manager...```, type the keyword "esp32" in the search box, download the latest version by Espressif Systems and install it.
 3. Plug in your board and select the board and port from the dropdown menu in the top left of the interface. Click on 'Select other board and port' and look for the XIAO_ESP32S3. 
 
 ![]({{ site.baseurl }}/assets/images/arduino-ide-board.png)
 
-That should be it! Now you can start uploading the example code or write your own. One thing to keep in mind with ESP32s is that sometimes they're in the wrong mode for programming. You can get back to boot mode by unplugging the board, then pressing and holding down the boot button (has a B next to it) on the board, then plugging it back in. Now it should work again :-)
+That should be it! Now you can start uploading the example code or write your own. For some code you need to install additional libraries, but you'll see that in the code. 
 
-## Touch keyboard
+### Boot mode
+One thing to keep in mind with ESP32 is that sometimes they're suddenly in the wrong mode for programming. You can get back to boot mode by unplugging the board, then pressing and holding down the boot button (has a B next to it) on the board, then plugging it back in. Now it should work again :-)
+
+## Code examples
+You can find the code examples in the [Arduino (Code) folder](https://github.com/v0ss3n/midimadness/tree/main/Arduino%20(code)) in the menu to the left. 
+
+<!-- ## Touch keyboard
 The touch range example sounds like this:
 
 <div class="videowrapper"><video width="480" height="360" controls>
@@ -30,17 +36,11 @@ You can also connect something conductive, like a conductive spool knitted sampl
 
 <div class="videowrapper"><video width="480" height="360" autoplay loop muted>
   <source src="{{ site.baseurl }}/assets\videos\keyboard-glove.mp4" type="video/mp4"></video>
-</div>
+</div> -->
 
-## To do
-- Libraries > welke installeren? duidelijk maken
+### Libraries
+Some code examples need libraries - they're at the top of the code so check it out there! For the BLE example you need to make a modification; click [here](https://v0ss3n.github.io/midimadness/midi-bluetooth/) for more on that.
 
 ![](https://www.researchgate.net/publication/305311624/figure/download/tbl1/AS:614279237603340@1523466991268/Each-MIDI-number-corresponds-to-an-octave-listed-in-the-left-column-and-a-note-listed-on.png)
 
-- <https://github.com/bartjakobs/MidiMadnessMaker>
 
----
-
-# Wroom
-
-![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.iotstarters.com%2Fwp-content%2Fuploads%2F2020%2F04%2FESP32_pin_details-e1586188935940.jpg&f=1&nofb=1&ipt=d6ede6d3e0661abda80bf721ebda983fce545a48d9ce1b6b18082cbfd7d04053&ipo=images)

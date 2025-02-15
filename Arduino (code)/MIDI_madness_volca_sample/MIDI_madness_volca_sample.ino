@@ -13,7 +13,7 @@
   made 2 Feb 2025
   by Michelle Vossen
 
-  This example code is in the public domain.
+  This example code is licensed under CC BY-NC-SA 4.0. See https://creativecommons.org/licenses/by-nc-sa/4.0/ for more information. 
 
   https://v0ss3n.github.io/midimadness
 */

@@ -14,7 +14,7 @@
   made 2 Feb 2025
   by Michelle Vossen & ChatGPT to figure out why ESP touch pins freeze sometimes.
 
-  This example code is in the public domain.
+  This example code is licensed under CC BY-NC-SA 4.0. See https://creativecommons.org/licenses/by-nc-sa/4.0/ for more information. 
 
   https://v0ss3n.github.io/midimadness
 */
@@ -26,14 +26,21 @@
 
 MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, MIDI);
 
-// MIDI note values for one octave (C4 to B4)
+
+// MIDI note values
 const uint8_t midiNotes[9] = { 60, 61, 62, 63, 64, 65, 66, 67, 68 };
 
-// Touch thresholds (default is 180000)
-uint32_t thresholds[9] = { 180000, 180000, 180000, 180000, 180000, 180000, 180000, 300000, 300000 };
+// Touch thresholds (default is 100000 but can be changed for individual sensors)
+int thresholds[] = { 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000 };
 
 // Touch pins
-const uint8_t touchPins[9] = { T1, T2, T3, T4, T5, T6, T7, T8, T9 };
+int touchPins[] = { T1, T2, T3, T4, T5, T6, T7, T8 };  // Pins that we're going to touch
+
+// variables for storing the touch values and thresholds. change threshold if needed
+int touchValues[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+
+
+
 
 // State tracking to prevent repeated MIDI note sending
 bool noteOnStates[9] = { false };

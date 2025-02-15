@@ -15,7 +15,7 @@
   made 2 Feb 2025
   by Michelle Vossen
 
-  This example code is in the public domain.
+  This example code is licensed under CC BY-NC-SA 4.0. See https://creativecommons.org/licenses/by-nc-sa/4.0/ for more information. 
 
   https://v0ss3n.github.io/midimadness
 */
@@ -35,7 +35,7 @@ int touch_pins[] = { T1, T2, T3, T4, T5, T6, T7, T8 };  // Pins that we're going
 
 // variables for storing the touch values and thresholds
 int touchValues[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-int thresholds[] = { 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000 };
+int thresholds[] = { 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000 };
 
 // MIDI note range (36-43 for T1-T8); change according to your device and wishes.
 int midiNotes[] = { 36, 37, 38, 39, 40, 41, 42, 43 };
