@@ -42,27 +42,31 @@ You can also connect something conductive, like a conductive spool knitted sampl
 Some code examples need libraries - they're at the top of the code so check it out there! For the BLE example you need to make a modification; click [here](https://v0ss3n.github.io/midimadness/midi-bluetooth/) for more on that.
 
 
-<!-- 
-above setup
-#include "driver/touch_sensor.h" 
+### implement in code to restart cap sensing
+above setup:
 
-// Store last read values to detect freezing
-uint32_t lastTouchValues[8] = { 0 };
+`#include "driver/touch_sensor.h" `
 
-at the top of loop
-int samePins = 0;
+`// Store last read values to detect freezing
+uint32_t lastTouchValues[8] = { 0 };`
 
-in:   for (int i = 0; i < 8; i++) {
-    uint32_t touchValue = touchRead(touchPins[i]);
+at the top in the loop:
+`int samePins = 0;`
+
+in:   `for (int i = 0; i < 8; i++) {`
+```    
+uint32_t touchValue = touchRead(touchPins[i]);
 
     if (touchValue == lastTouchValues[i]) {
       samePins++;
     }
     lastTouchValues[i] = touchValue;
+```
 
 
 
 or
+```
     touchValues[i] = touchRead(touch_pins[i]);
 
 
@@ -70,21 +74,20 @@ or
       samePins++;
     }
     lastTouchValues[i] = touchValues[i];
-
+``` 
 
 before final closing bracket of the loop
 
-
+```
   // All of the pins returned the same value, which means probably something is frozen.
   if (samePins == 8) {
     Serial.println("Restarting touch pad...");
     touch_pad_fsm_start();
   }
+```
 
 
 
 
 
 
-
--->
