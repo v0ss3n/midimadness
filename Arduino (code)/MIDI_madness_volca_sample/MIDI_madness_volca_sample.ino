@@ -19,6 +19,8 @@
 */
 
 #include <MIDI.h>
+#include "driver/touch_sensor.h"
+
 #define TX 43
 
 MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, MIDI);
@@ -50,6 +52,9 @@ uint8_t mapToCC(uint32_t value) {
 int note = 20;
 int velocity = 100;
 
+// Store last read values to detect freezing
+uint32_t lastTouchValues[8] = { 0 };
+
 void setup() {
   // Initialize serial for debugging
   Serial.begin(115200);
@@ -63,20 +68,27 @@ void setup() {
 bool isNoteActive[] = { false, false, false, false, false, false, false, false, false, false };
 
 void loop() {
+  int samePins = 0;
+
   for (int i = 0; i < 8; i++) {
     // Read the touch value for the pin
     uint32_t touchValue = touchRead(touchPins[i]);
     touchValue = constrain(touchValue, 0, 500000);
 
-    // Debugging output
+    // Printing touch and sensor values
     Serial.print("TouchPin ");
     Serial.print(touchPins[i]);
     Serial.print(": ");
     Serial.println(touchValue);
     Serial.print("Sensor value: ");
-      sensorValue = analogRead(sensorPin);
-
+    sensorValue = analogRead(sensorPin);
     Serial.println(sensorValue);
+
+    if (touchValue == lastTouchValues[i]) {
+      samePins++;
+    }
+    lastTouchValues[i] = touchValue;
+
     // Check if touch value exceeds the threshold
     if (touchValue > thresholds[i]) {
       // If note is not already on, send a Note On message
@@ -103,6 +115,13 @@ void loop() {
     }
   }
 
+
+
+  // All of the pins returned the same value, which means probably something is frozen.
+  if (samePins == 8) {
+    Serial.println("Restarting touch pad...");
+    touch_pad_fsm_start();
+  }
 
   // Small delay to prevent excessive polling
   delay(10);

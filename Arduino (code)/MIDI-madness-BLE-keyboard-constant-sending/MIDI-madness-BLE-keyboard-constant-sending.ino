@@ -22,6 +22,7 @@
 
 #include <BLEMIDI_Transport.h>       //BLE MIDI Transport library
 #include <hardware/BLEMIDI_ESP32.h>  //BLE ESP32 library
+#include "driver/touch_sensor.h"
 
 BLEMIDI_CREATE_INSTANCE("MySynth", MIDI);  //make instance of BLEMIDI. Give this a recognizable name! Like your name? Alter ego?
 
@@ -40,18 +41,28 @@ int thresholds[] = { 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000 };
 // MIDI note range (36-43 for T1-T8); change according to your device and wishes.
 int midiNotes[] = { 36, 37, 38, 39, 40, 41, 42, 43 };
 
+// Store last read values to detect freezing
+uint32_t lastTouchValues[8] = { 0 };
+
 void setup() {
   Serial.begin(115200);
   MIDI.begin();  //start MIDI
 }
 
 void loop() {
+  int samePins = 0;
+
   Serial.println("Touch values:");
 
   // You can send the note continuously with a delay in between when you touch and hold.
   for (int i = 0; i < 8; i++) {
     touchValues[i] = touchRead(touch_pins[i]);
     Serial.println(touchValues[i]);
+
+    if (touchValues[i] == lastTouchValues[i]) {
+      samePins++;
+    }
+    lastTouchValues[i] = touchValues[i];
 
     if (touchValues[i] > thresholds[i]) {
       Serial.print("Pin touched: ");
@@ -95,5 +106,11 @@ void loop() {
     lastAnalogNote = -1;
   }
 
+  // All of the pins returned the same value, which means probably something is frozen.
+  if (samePins == 8) {
+    Serial.println("Restarting touch pad...");
+    touch_pad_fsm_start();
+  }
+  
   delay(10);
 }

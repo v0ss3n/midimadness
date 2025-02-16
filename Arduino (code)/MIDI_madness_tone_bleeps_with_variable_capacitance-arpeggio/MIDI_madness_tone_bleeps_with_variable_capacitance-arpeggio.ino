@@ -14,6 +14,7 @@
 */
 
 #include "pitches.h"
+#include "driver/touch_sensor.h"
 
 // constants and variables
 
@@ -29,6 +30,9 @@ int thresholds[] = { 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100
 // You can change the notes played, check out pitches.h for all options
 int pitches[] = { NOTE_A3, NOTE_B3, NOTE_C3, NOTE_D3, NOTE_E3, NOTE_F3, NOTE_F4, NOTE_A4 };
 
+// Store last read values to detect freezing
+uint32_t lastTouchValues[8] = { 0 };
+
 void setup() {
   // initialize serial communication at 115200 bits per second:
   Serial.begin(115200);
@@ -37,6 +41,8 @@ void setup() {
 }
 
 void loop() {
+  int samePins = 0;
+
   Serial.println("Touch values:");
 
   bool isToneActive = false;  // Track if a tone is currently active
@@ -49,6 +55,11 @@ void loop() {
     Serial.print(touch_pins[i]);
     Serial.print(": ");
     Serial.println(touchValues[i]);
+
+    if (touchValues[i] == lastTouchValues[i]) {
+      samePins++;
+    }
+    lastTouchValues[i] = touchValues[i];
 
     if (touchValues[i] > thresholds[i]) {
       Serial.print("Pin touched: ");
@@ -78,6 +89,12 @@ void loop() {
     }
   } else {
     noTone(speaker_pin);  // Stop tone if no touch is detected
+  }
+
+  // All of the pins returned the same value, which means probably something is frozen.
+  if (samePins == 8) {
+    Serial.println("Restarting touch pad...");
+    touch_pad_fsm_start();
   }
 
   delay(20);  // Small delay for stability

@@ -20,6 +20,7 @@
 */
 
 #include <MIDI.h>
+#include "driver/touch_sensor.h"
 
 #define TX 43
 
@@ -39,9 +40,6 @@ int touchPins[] = { T1, T2, T3, T4, T5, T6, T7, T8 };  // Pins that we're going 
 // variables for storing the touch values and thresholds. change threshold if needed
 int touchValues[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 
-
-
-
 // State tracking to prevent repeated MIDI note sending
 bool noteOnStates[9] = { false };
 
@@ -49,6 +47,9 @@ bool noteOnStates[9] = { false };
 uint8_t mapToCC(uint32_t value) {
   return map(value, thresholds[0], 300000, 0, 127);  // Map from threshold to a max of 300000
 }
+
+// Store last read values to detect freezing
+uint32_t lastTouchValues[8] = { 0 };
 
 void setup() {
   // Initialize serial for debugging
@@ -62,6 +63,8 @@ void setup() {
 }
 
 void loop() {
+  int samePins = 0;
+  
   // for (int i = 60; i < 100; i++) {
   //   MIDI.sendNoteOn(i, 60, 1);  // Note On, velocity 127, channel 1
   //   MIDI.sendNoteOn(i-20, i, 2);  // Note On, velocity 127, channel 1
@@ -81,6 +84,11 @@ void loop() {
     Serial.print(touchPins[i]);
     Serial.print(": ");
     Serial.println(touchValue);
+
+    if (touchValue == lastTouchValues[i]) {
+      samePins++;
+    }
+    lastTouchValues[i] = touchValue;
 
     // Check if touch value exceeds the threshold
     if (touchValue > thresholds[i]) {
@@ -110,7 +118,11 @@ void loop() {
     }
   }
 
-
+  // All of the pins returned the same value, which means probably something is frozen.
+  if (samePins == 8) {
+    Serial.println("Restarting touch pad...");
+    touch_pad_fsm_start();
+  }
   // Small delay to prevent excessive polling
   delay(10);
 }
