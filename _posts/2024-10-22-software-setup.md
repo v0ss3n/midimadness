@@ -37,7 +37,8 @@ For Mac or Windows.
 
 That should be it! Now you can start uploading the example code or write your own. For some code you need to install additional libraries, but you'll see that in the code. 
 
-## Now the PC should recognise the microcontroller from the drop down menu and allow us to program further. 
+## Next Steps
+Now the PC should recognise the microcontroller from the drop down menu and allow us to program further. 
 
 ### Boot mode
 One thing to keep in mind with ESP32 is that sometimes they're suddenly in the wrong mode for programming. You can get back to boot mode by unplugging the board, then pressing and holding down the boot button (has a B next to it) on the board, then plugging it back in. Now it should work again :-)
