@@ -36,9 +36,10 @@ Now that we know everything is complete in our diy it, we can start with solderi
 
 **RESISTORS**
 In your kit you find 4 different types of resistors, they are colour coded with bands to show what value the resistor is. 
-R4          1 x 470Ω   (Brown - Black - Black - Purple - Gold) 
-R1          1 x 100Ω   (Brown - Black - Black - Black - Brown)
-R2 + R3     2 x 47Ω    (Brown - Gold - Black - Purple - Yellow) 
+
+- R4:  1 x 470Ω (Brown - Black - Black - Purple - Gold) 
+- R1:  1 x 100Ω (Brown - Black - Black - Black - Brown)
+- R2 + R3: 2 x 47Ω (Brown - Gold - Black - Purple - Yellow) 
 
 **LED**
 Next we solder in the LED, be mindful of the polarity of the led! 
