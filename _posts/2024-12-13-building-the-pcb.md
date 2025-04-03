@@ -33,54 +33,51 @@ Now that we know everything is complete in our diy it, we can start with solderi
 
 ### Follow the instructions below together with the interactive BOM, so you can find the location of where to put the components on the PCB: https://v0ss3n.github.io/midimadness/midimadnessmaker-ibom.html
 
-**RESISTORS**
 
+**RESISTORS**
 In your kit you find 4 different types of resistors, they are colour coded with bands to show what value the resistor is. 
 R4          1 x 470Ω   (Brown - Black - Black - Purple - Gold) 
 R1          1 x 100Ω   (Brown - Black - Black - Black - Brown)
 R2 + R3     2 x 47Ω    (Brown - Gold - Black - Purple - Yellow) 
 
 **LED**
-
 Next we solder in the LED, be mindful of the polarity of the led! 
 the negative side (SHORT LEG) needs to be inserted in the SQUARE PAD! 
 the long side of the led will be in the round pas.
 
 **PIN HEADERS**
-
 The pin headers are there to keep the ESP32 in place so you can take the microcontroller in and out if needed. If you want to make sure the pin headers are not wiggeling, use some tape to keep the headers in place and adjust accordingly after soldering a few pins first.
 
 **ON/OFF SWITCH**
-
 Solder the switch in the location of the PCB, wiggle the switch a bit back and forth to place it inside the holes of the pcb. 
 
 **JACKS**
-
 In the kit you find 2 audio jacks
 MIDI_TR_S1     Aaudio jack (flat type)                   midi output 
 Speaker_in1    Audio output jack (thonkiconn type        audio output
 
 **POTENTIOMETER**
-
 Solder the potentiometer at the location where the pcb shows the text "E_textile_tuner_1" If the potentiometer is struggeling to fit in the holes bend them over a bit with your hands to make it fit in the spot. Solder all the pads on the bottom (also the potentiometer mounting pads)
 
 **BARREL JACKk**
-
 The barrel jack is used for powering the kit via external power sources that are not USB. You can use a 9V battery to power the kit externally and we will show you examples about this later. 
 
-**VOLTAGE REGULATOR**
 
+**VOLTAGE REGULATOR**
 The Voltage Regulator is a later addition to the first iteration of the diy kit, because we wanted to power the board over 9V battery. Our microcontroller is only able to handle 5V maximum, so therefore we use the Voltage Regulator to step down the 9V -> 5V. 
 
 The voltage regulator is type L780SCV and we place it on the location where the Diode was supposted to be soldered in on location D1. Position the regulator with the flat side towards the microcontroller. The outter two legs should now be soldered each in a round pad on the PCB, and the middle leg of the regulator is soldered to the outside of the potentiometer next door.
 
-**SPEAKER & BLUETOOTH ANTENNA**
+![]({{ site.baseurl }}/assets/images/midi-regulator.jpg)
 
+**SPEAKER & BLUETOOTH ANTENNA**
 You have the option to add the Bluetooth Antenna now or add them later.
 
 **DONE!**
 
 Do not power the diy kit just yet! Check the bottom of your pcb for any blobs of solder that can use a bit more, make sure solder points are not connected that should not be and if any clips or components leads might be touching eachoter or stick out. 
+
+![]({{ site.baseurl }}/assets/images/midi-final-solder.jpg)
 
 
 ## Step 3. Testing the DIY kit
