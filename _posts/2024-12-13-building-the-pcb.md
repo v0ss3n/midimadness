@@ -9,6 +9,12 @@ Congratulations with your MIDI Madness Maker DIY kit! Let's get it up and runnin
 
 ![]({{ site.baseurl }}/assets/images/overview.jpg)
 
+If you have never soldered before, and want to know the basics, we can reccomend to take a look at the Adafruit Guide To Excellent Soldering. <https://learn.adafruit.com/adafruit-guide-excellent-soldering/tools>
+
+![]({{ site.baseurl }}/assets/images/soldering.jpg)
+![]({{ site.baseurl }}/assets/images/soldering 2.jpg)
+
+
 
 ## Step 1. Check your Diy Kit
 ### Bill of Materials
@@ -31,7 +37,9 @@ Make sure your kit comes with the following components:
 
 Now that we know everything is complete in our diy it, we can start with soldering in the components. For this we recommend putting components in the board by type instead of all at once before soldering, this prevents the board from getting overcrowded. When soldering DIY Kits, we start with the smallest components first. 
 
-### Follow the instructions below together with the interactive BOM, so you can find the location of where to put the components on the PCB: https://v0ss3n.github.io/midimadness/midimadnessmaker-ibom.html
+### Follow the instructions below together with the interactive BOM (Bill Of Materials), so you can find the location of where to put the components on the PCB:
+
+<https://v0ss3n.github.io/midimadness/midimadnessmaker-ibom.html>
 
 
 ### **Resistors**
