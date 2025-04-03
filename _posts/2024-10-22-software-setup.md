@@ -5,11 +5,29 @@ permalink: "/software-setup/"
 ---
 
 ## Setting up the Arduino IDE
-In these examples we're using a [Seeed Studio XIAO ESP32S3](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/). Their wiki is a great place to get started and acquainted with all of the possibilities this tiny development board has to offer. But first, we need to install some drivers. For both Mac and Windows, you can get them [here](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) (CP210x VCP Mac OSX Driver or CP210x Windows Drivers). For Mac, it can also work to just follow the steps below and then upload something to your ESP32 for the first time; there should be a prompt to install some drivers at some point.
+
+In these examples we're using a [Seeed Studio XIAO ESP32S3](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/). Their wiki is a great place to get started with all of the possibilities this tiny development board has to offer. 
+
+We have just build our DIY KIT, now let's program it!
+
+## Step by Step Software Setup
+
+### Step 1: Installing Drivers
+Because we are using the XIAO EXP32S3, we need to install some additional drivers so that our computer can understand the microcontroller, and vice versa. 
+
+For both Mac and Windows, you can get them [here](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads) (CP210x VCP Mac OSX Driver or CP210x Windows Drivers). 
+For Mac, it can also work to just follow the steps below and then upload something to your ESP32 for the first time; there should be a prompt to install some drivers at some point.
 
 ![](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/2.jpg)
 
-For a quick start, follow these steps in the Arduino IDE (assuming you have it installed already; if not, download the latest stable version and launch it):
+### Step 2: Installing the Arduino IDE
+
+We need to install the Arduino IDE Software. The IDE let's us code and upload this to the micrcocontroller. 
+
+Download the latest version of the Arduino IDE here: <https://www.arduino.cc/en/software>
+For Mac or Windows. 
+
+### Downloading the Drivers from the Arduino IDE
 
 1. Navigate to ```File > Preferences```, and paste this URL in the 'Additional Boards Manager URLs': <https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json>
 2. Now, navigate to ```Tools > Board > Boards Manager...```, type the keyword "esp32" in the search box, download the latest version by Espressif Systems and install it.
@@ -18,6 +36,8 @@ For a quick start, follow these steps in the Arduino IDE (assuming you have it i
 ![]({{ site.baseurl }}/assets/images/arduino-ide-board.png)
 
 That should be it! Now you can start uploading the example code or write your own. For some code you need to install additional libraries, but you'll see that in the code. 
+
+## Now the PC should recognise the microcontroller from the drop down menu and allow us to program further. 
 
 ### Boot mode
 One thing to keep in mind with ESP32 is that sometimes they're suddenly in the wrong mode for programming. You can get back to boot mode by unplugging the board, then pressing and holding down the boot button (has a B next to it) on the board, then plugging it back in. Now it should work again :-)
@@ -42,7 +62,12 @@ You can also connect something conductive, like a conductive spool knitted sampl
 Some code examples need libraries - they're at the top of the code so check it out there! For the BLE example you need to make a modification; click [here](https://v0ss3n.github.io/midimadness/midi-bluetooth/) for more on that.
 
 
-### implement in code to restart cap sensing
+
+
+
+
+### Extra Debug thingie
+implement in code to restart cap sensing
 above setup:
 
 `#include "driver/touch_sensor.h" `
