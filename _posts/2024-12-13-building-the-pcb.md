@@ -34,7 +34,7 @@ Now that we know everything is complete in our diy it, we can start with solderi
 ### Follow the instructions below together with the interactive BOM, so you can find the location of where to put the components on the PCB: https://v0ss3n.github.io/midimadness/midimadnessmaker-ibom.html
 
 
-### **RESISTORS**
+### **Resistors**
 
 In your kit you find 4 different types of resistors, they are colour coded with bands to show what value the resistor is. 
 
@@ -48,29 +48,29 @@ Next we solder in the LED, be mindful of the polarity of the led!
 the negative side (SHORT LEG) needs to be inserted in the SQUARE PAD! 
 the long side of the led will be in the round pas.
 
-### **PIN HEADERS**
+### **Pin Headers**
 
 The pin headers are there to keep the ESP32 in place so you can take the microcontroller in and out if needed. If you want to make sure the pin headers are not wiggeling, use some tape to keep the headers in place and adjust accordingly after soldering a few pins first.
 
-### **ON/OFF SWITCH**
+### **Switch**
 
 Solder the switch in the location of the PCB, wiggle the switch a bit back and forth to place it inside the holes of the pcb. 
 
-### **AUDIO EN MIDI JACK**
+### **Audio and Midi Jack**
 
 In the kit you find 2 audio jacks
 MIDI_TR_S1     Aaudio jack (flat type)                   midi output 
 Speaker_in1    Audio output jack (thonkiconn type        audio output
 
-### **POTENTIOMETER**
+### **Potentiometer**
 
 Solder the potentiometer at the location where the pcb shows the text "E_textile_tuner_1" If the potentiometer is struggeling to fit in the holes bend them over a bit with your hands to make it fit in the spot. Solder all the pads on the bottom (also the potentiometer mounting pads)
 
-### **POWER BARREL JACK**
+### **Power Barrel Jack**
 
 The barrel jack is used for powering the kit via external power sources that are not USB. You can use a 9V battery to power the kit externally and we will show you examples about this later. 
 
-### **VOLTAGE REGULATOR**
+### **Voltage Regulator**
 
 The Voltage Regulator is a later addition to the first iteration of the diy kit, because we wanted to power the board over 9V battery. Our microcontroller is only able to handle 5V maximum, so therefore we use the Voltage Regulator to step down the 9V -> 5V. 
 
@@ -78,11 +78,11 @@ The voltage regulator is type L780SCV and we place it on the location where the 
 
 ![]({{ site.baseurl }}/assets/images/midi-regulator.jpg)
 
-### **SPEAKER & BLUETOOTH ANTENNA**
+### **Speaker and Bluetooth Antenna**
 
 Solder the speaker to the pads on the PCB, the black wire is connected to the swquare pad, the red wire to the circular pad. You can stick the speaker to the front side or the pack side of the Midi Madness Maker. The Bluetooth antenna can be added later when using Bluetooth functions. The ESP32 Bluetooth is already onboard but the antenna amplifies the signal so you can have more distance between source and reciever. 
 
-### **ESP32**
+### **ESP32 Microcontroller**
 The ESP32S3's orientation is important: the USB-C port should face **away** from the pcb board.
 
 ### **DONE!**
@@ -100,10 +100,17 @@ Before we test our diy kit, make sure that you ONLY power the kit via one of the
 When the microcontroler is in the board, connect the usb-c cable and power the kit using a wall wart usb block or your computer. The LED on the ESP32 should blink or be lit to indicate the board is powered. 
 
 **Power options for the MIDI MADNESS MAKER**
-- Power over USB (5V) directly on the ESP32.
-- Power over 9V battery using the external DC Barrel jack Connector
-- Power over USB using an external powerbank
+-  Power over USB (5V) directly on the ESP32.
+This is the easiest option, connect a USB-C cable from the microcontroller to your laptop or USB power block
 
+- Power over 9V battery using the external DC Barrel jack Connector
+  You can use a 9V battery or 9V adapter to power the midi madness maker on the bottom side, this is not recommended to do during prototyping though, the regulator get's warm when used and using a power block is not as safe as over USB for prototyping. You can use these methods, when you have stabelized your setup and you are looking for ways to power externally that are not over USB.
+
+![]({{ site.baseurl }}/assets/images/midi-power.jpg)
+
+
+- Power over USB using an external powerbank.
+  You can use a powerbank to power the Midi Madness Maker! This is a great option for when you want to implement the kit into a garnment or object and you don't like to work with single use batteries. 
 
 ## END OF THE BUILD GUIDE
 
