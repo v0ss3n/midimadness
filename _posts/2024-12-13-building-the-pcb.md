@@ -122,4 +122,4 @@ This is the easiest option, connect a USB-C cable from the microcontroller to yo
 
 ## END OF THE BUILD GUIDE
 
--> Go to the "SOFTWARE SETUP" to upload your first code onto the board! 
+-> Go to the "SOFTWARE SETUP" page on this website, to upload your first code onto the board! 
