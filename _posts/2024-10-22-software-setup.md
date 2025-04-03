@@ -37,14 +37,27 @@ For Mac or Windows.
 
 That should be it! Now you can start uploading the example code or write your own. For some code you need to install additional libraries, but you'll see that in the code. 
 
+## Code examples
+You can find the code examples in the [Arduino (Code) folder](https://github.com/v0ss3n/midimadness/tree/main/Arduino%20(code)) in the menu to the left. 
+
+### Step 3: Your First Patch
+In the Arduino Code Example Folder, open the Arduino project code named "MIDI-madness-tone-bleeps". This is a super simple patch, where by touching the touch pads of the Midi Madness Maker, various notes will be played out of the onboard speaker and trough the audio output jack. 
+
+![]({{ site.baseurl }}/assets/images/Tone-bleeps-github.png)
+
+You can download the file from github, or copy the code into your Arduino IDE. 
+
+![]({{ site.baseurl }}/assets/images/Tone-bleeps-arduino.jpg)
+
+This code is fairly easy to understand. You can change notes to others or change the sensitivity of the touchpads in case you have other things connected to them such as E-textiles or conductive materials. T
+
+
 ## Next Steps
 Now the PC should recognise the microcontroller from the drop down menu and allow us to program further. 
 
 ### Boot mode
 One thing to keep in mind with ESP32 is that sometimes they're suddenly in the wrong mode for programming. You can get back to boot mode by unplugging the board, then pressing and holding down the boot button (has a B next to it) on the board, then plugging it back in. Now it should work again :-)
 
-## Code examples
-You can find the code examples in the [Arduino (Code) folder](https://github.com/v0ss3n/midimadness/tree/main/Arduino%20(code)) in the menu to the left. 
 
 <!-- ## Touch keyboard
 The touch range example sounds like this:
