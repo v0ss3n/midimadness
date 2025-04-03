@@ -80,19 +80,39 @@ Some code examples need libraries - they're at the top of the code so check it o
 
 
 
-### Extra Debug thingie
-implement in code to restart cap sensing
-above setup:
+<!-- ## Touch keyboard
+The touch range example sounds like this:
 
-`#include "driver/touch_sensor.h" `
+<div class="videowrapper"><video width="480" height="360" controls>
+  <source src="{{ site.baseurl }}/assets/videos/touch-range-sound.mp4" type="video/mp4"></video>
+</div>
 
-`// Store last read values to detect freezing
-uint32_t lastTouchValues[8] = { 0 };`
+You can also connect something conductive, like a conductive spool knitted sample. Now the interaction is way more interesting!
 
-at the top in the loop:
-`int samePins = 0;`
+<div class="videowrapper"><video width="480" height="360" autoplay loop muted>
+  <source src="{{ site.baseurl }}/assets\videos\keyboard-glove.mp4" type="video/mp4"></video>
+</div> -->
 
-in:   `for (int i = 0; i < 8; i++) {`
+### Libraries
+Some code examples need libraries - they're at the top of the code so check it out there! For the BLE example you need to make a modification; click [here](https://v0ss3n.github.io/midimadness/midi-bluetooth/) for more on that.
+
+### Capacitive sensing
+If you're using capacitive touch sensing with the ESP32S3, there is a pretty big chance that the touch pins will freeze at some point. Luckily this is easy to deal with in code, because you can reset the touch pads. The way it detects frozen pins in this implementation is by checking if the 8 values read are the exact same values as read in the previous round. If they are the same, that's very suspicious, and a very likely indication that the touch pads are frozen. This fix has been made by Bart Jakobs (check out his MIDI Madness Maker library [here](https://github.com/bartjakobs/MidiMadnessMaker)). The fix is implemented in the example codes, but if you want to implement it yourself you need the following code.
+implement in code to restart cap sensing.
+
+- Above setup: `
+
+``` 
+#include "driver/touch_sensor.h" 
+
+// Store last read values to detect freezing
+uint32_t lastTouchValues[8] = { 0 };
+```
+
+- At the top in the loop: `int samePins = 0;`
+
+- In:   `for (int i = 0; i < 8; i++) {`
+
 ```    
 uint32_t touchValue = touchRead(touchPins[i]);
 
@@ -103,8 +123,8 @@ uint32_t touchValue = touchRead(touchPins[i]);
 ```
 
 
+or:
 
-or
 ```
     touchValues[i] = touchRead(touch_pins[i]);
 
@@ -115,7 +135,7 @@ or
     lastTouchValues[i] = touchValues[i];
 ``` 
 
-before final closing bracket of the loop
+Before final closing bracket of the loop:
 
 ```
   // All of the pins returned the same value, which means probably something is frozen.
@@ -124,9 +144,5 @@ before final closing bracket of the loop
     touch_pad_fsm_start();
   }
 ```
-
-
-
-
 
 

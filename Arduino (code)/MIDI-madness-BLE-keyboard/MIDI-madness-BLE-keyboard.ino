@@ -69,8 +69,8 @@ void loop() {
       }
       
       // Constrain touch value for MIDI modulation
-      touchValues[i] = constrain(touchValues[i], 50000, 200000);
-      int midiModulation = map(touchValues[i], 50000, 200000, 0, 127);
+      touchValues[i] = constrain(touchValues[i], 150000, 300000);
+      int midiModulation = map(touchValues[i], 150000, 300000, 0, 127);
       
       MIDI.sendControlChange(1, midiModulation, 1); // Modulate active note
     } else {
@@ -84,7 +84,7 @@ void loop() {
   // Read analog sensor and map to MIDI CC 7 (volume)
   int analogValue = analogRead(analog_pin);
   if (analogValue > 1500) {
-    int midiVolume = map(analogValue, 1500, 4095, 0, 127);
+    int midiVolume = map(analogValue, 1500, 4095, 50, 127);
     MIDI.sendControlChange(7, midiVolume, 1);
   }
 

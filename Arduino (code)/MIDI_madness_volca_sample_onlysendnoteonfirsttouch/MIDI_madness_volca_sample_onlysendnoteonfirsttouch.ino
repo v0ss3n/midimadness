@@ -28,8 +28,8 @@ MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, MIDI);
 // MIDI note values for one octave (C4 to B4)
 const uint8_t midiNotes[8] = { 60, 61, 62, 63, 64, 65, 66, 67 };
 
-// Touch thresholds (default is 140000 now but can change from sensor to sensor)
-uint32_t thresholds[8] = { 140000, 140000, 140000, 140000, 140000, 140000, 140000, 140000 };
+// Touch thresholds (default is 170000 now but can change from sensor to sensor)
+uint32_t thresholds[8] = { 170000, 170000, 170000, 170000, 170000, 170000, 170000, 170000 };
 
 // Touch pins
 const uint8_t touchPins[8] = { T1, T2, T3, T4, T5, T6, T7, T8 };
@@ -46,10 +46,10 @@ bool noteOnStates[8] = { false };
 
 // Function to map touch values to MIDI CC range (0-127)
 uint8_t mapToCC(uint32_t value) {
-  return map(value, thresholds[0], 200000, 127, 0);  // Map from threshold to the max that you want
+  value = constrain(value, thresholds[0], 500000);   // Constrain 
+  return map(value, thresholds[0], 500000, 0, 127);  // Map from threshold to the max that you want
 }
 
-uint8_t lastCCValues[8] = { 0 };      // Stores last CC value for each touch pin
 uint8_t lastSensorValues[8] = { 0 };  // Stores last sensor value for each pin
 
 int note = 20;
@@ -67,6 +67,8 @@ void setup() {
 
   MIDI.begin();
 }
+// Add an active flag for each sensor
+bool isNoteActive[] = { false, false, false, false, false, false, false, false, false, false };
 
 void loop() {
   int samePins = 0;
@@ -74,16 +76,39 @@ void loop() {
   for (int i = 0; i < 8; i++) {
     // Read the touch value for the pin
     uint32_t touchValue = touchRead(touchPins[i]);
-    touchValue = constrain(touchValue, 0, 200000);
-
-    // Printing touch and sensor values
-    Serial.print("TouchPin ");
-    Serial.print(touchPins[i]);
-    Serial.print(": ");
-    Serial.println(touchValue);
-    Serial.print("Sensor value: ");
+    touchValue = constrain(touchValue, 0, 500000);
+    // Read and map the sensor value
     sensorValue = analogRead(sensorPin);
-    Serial.println(sensorValue);
+    sensorValue = map(sensorValue, 0, 4095, 0, 127);
+
+    // Map touch value for CC messages
+    uint8_t ccValue = mapToCC(touchValue);
+
+    MIDI.sendControlChange(44, ccValue, channels[i]);  // 44 is pitch eg intensity
+
+
+    // if (sensorValue != lastSensorValues[i]) {
+    //   MIDI.sendControlChange(43, sensorValue, channels[i]);  // 43 is speed
+    //   lastSensorValues[i] = sensorValue;                     // Store last sensor value
+    // }
+
+    // Print touch pin values
+    Serial.print("TouchPins:\t");
+    for (int i = 0; i < 8; i++) {
+      Serial.print("T");
+      Serial.print(touchPins[i]);
+      Serial.print(": ");
+      Serial.print(touchRead(touchPins[i]));
+      Serial.print("\t");  // Tab for spacing
+    }
+
+    // Print the sensor value at the end of the row
+    int sensorValue = analogRead(sensorPin);
+    Serial.print("| SensorValue:\t");
+    Serial.print(sensorValue);
+    Serial.print("| ccValue:\t");
+    Serial.println(ccValue);
+
 
     if (touchValue == lastTouchValues[i]) {
       samePins++;
@@ -93,32 +118,16 @@ void loop() {
     // Check if touch value exceeds the threshold
     if (touchValue > thresholds[i]) {
       // First time touch is detected (Note On)
-      MIDI.sendNoteOn(midiNotes[i], 127, channels[i]);  // Send Note On
-      Serial.print("Note On: ");
-      Serial.println(midiNotes[i]);
-    }
+      if (!noteOnStates[i]) {
+        MIDI.sendNoteOn(midiNotes[i], 127, channels[i]);  // Send Note On
+        noteOnStates[i] = true;
+        Serial.print("Note On: ");
+        Serial.println(midiNotes[i]);
+      }
 
-    // Read and map the sensor value
-    sensorValue = analogRead(sensorPin);
-    sensorValue = map(sensorValue, 0, 4095, 0, 127);
 
-    // Map touch value for CC messages
-    uint8_t ccValue = mapToCC(touchValue);
 
-    // Send CC messages only if values have changed
-    if (ccValue != lastCCValues[i]) {
-      MIDI.sendControlChange(43, ccValue, channels[i]);
-      Serial.print("CC value: ");
-      Serial.println(ccValue);
-      lastCCValues[i] = ccValue;  // Store last CC value
-    }
-
-    if (sensorValue != lastSensorValues[i]) {
-      MIDI.sendControlChange(43, sensorValue, channels[i]);
-      lastSensorValues[i] = sensorValue;  // Store last sensor value
-    }
-
-    if (noteOnStates[i]) {
+    } else if (noteOnStates[i]) {
       // If touch is released, send Note Off
       MIDI.sendNoteOff(midiNotes[i], 0, channels[i]);
       noteOnStates[i] = false;
@@ -136,5 +145,5 @@ void loop() {
   }
 
   // Small delay to prevent excessive polling
-  delay(30);
+  delay(20);
 }

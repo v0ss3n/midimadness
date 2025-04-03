@@ -4,7 +4,7 @@ title: "Sending MIDI wirelessly to phone apps"
 permalink: "/midi-bluetooth/"
 ---
 
-This example is based on a tutorial by Rico Kanthatham which you can find [here](https://caramel-adjustment-1d3.notion.site/Fabricademy-Electronic-Music-Xiao-ESP32C3-BLE-MIDI-Controller-1389bb27ac9880fbaa47e46e3878080e).
+There are multiple ways to turn your MIDI Madness Maker into a Bluetooth MIDI keyboard! The code used for the different examples is the same (MIDI-madness-BLE-keyboard.ino). Scroll down for the various output options.
 
 ## Libraries
 You need to start by installing the BLE-MIDI library by Lathoub. **Make sure you do NOT install the other suggested libraries**; if you have additional BLE libraries compilation may fail so uninstall those if you have them :)
@@ -16,13 +16,31 @@ Programming genius Bart Jakobs made a nice library to use with the MIDI Madness 
 
 Alternatively, you can use the BLE keyboard code in the Arduino (Code) folder.
 
+---
+
+# Sending MIDI wirelessly to your computer
+Usually you need to connect a MIDI keyboard via USB when you want to connect it to your computer, but you can also do this wirelessly! With this functionality, you can send MIDI to browser-based apps like [https://midi.city/](midi.city) (works best on Chrome/Safari). Make sure Bluetooth is turned on.
+
+Steps (Windows)
+1. Install [BLE-MIDI Connect](https://apps.microsoft.com/detail/9nvmlzttwwvl). You can download the free trial, it has no restrictions (but if you will use it a lot, you can buy it, since it's only the price of a cup of coffee and the developers deserve coffee). This software is used to connect to the BLE device.
+2. Install [LoopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html). This software is used to connect the BLE device to a virtual port, so that (web) apps on your computer can easily recognize it as a MIDI keyboard.
+
+Steps (Mac)
+Audio MIDI setup (pre installed on Mac): enable Bluetooth MIDI in the audio/MIDI setup
+
+Now you can go to midi.city or other web-based MIDI keyboards that allow external keyboards to be connected and control it with the MIDI Madness Maker! This should also work with Ableton.
+
+---
+
+# MIDI to Garageband/SynprezFM 
+This example is based on a tutorial by Rico Kanthatham which you can find [here](https://caramel-adjustment-1d3.notion.site/Fabricademy-Electronic-Music-Xiao-ESP32C3-BLE-MIDI-Controller-1389bb27ac9880fbaa47e46e3878080e).
+
 ## Apps
 Android: download MIDI BLE Connect & SynprezFM II
 Apple: download Bluetooth MIDI Connect & Garageband
 
 ### Using garageband
 You can use this code example for various keyboards or drums, but you will probably need to change the MIDI notes sent (check the charts below). CC doesn't always have an effect.
-
 
 MIDI CC: <https://rfwilmut.net/notes/GBcontrol.html>
 MIDI map for Garageband drums (via <https://gist.github.com/igolopolosov/8193f8d3da522969244dda318f21d3fa>)

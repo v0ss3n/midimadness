@@ -29,14 +29,14 @@ MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, MIDI);
 const uint8_t midiNotes[8] = { 60, 61, 62, 63, 64, 65, 66, 67 };
 
 // Touch thresholds
-uint32_t thresholds[8] = { 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000 };
+uint32_t thresholds[8] = { 150000, 150000, 150000, 150000, 150000, 150000, 150000, 150000 };
 
 // Touch pins
 const uint8_t touchPins[8] = { T1, T2, T3, T4, T5, T6, T7, T8 };
 
 // Function to map touch values to MIDI CC range (0-127)
 uint8_t mapToCC(uint32_t value) {
-  return map(value, thresholds[0], 300000, 0, 127);
+  return map(value, thresholds[0], 400000, 0, 127);
 }
 
 // Analog sensor pin
@@ -84,7 +84,7 @@ void loop() {
       }
 
       uint8_t ccValue = mapToCC(touchValue);
-      MIDI.sendControlChange(46, ccValue, 1);
+      MIDI.sendControlChange(48, ccValue, 1);
       Serial.print("CC value: ");
       Serial.println(ccValue);
 
