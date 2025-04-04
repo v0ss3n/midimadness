@@ -8,7 +8,7 @@ permalink: "/software-setup/"
 
 In these examples we're using a [Seeed Studio XIAO ESP32S3](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/). Their wiki is a great place to get started with all of the possibilities this tiny development board has to offer. 
 
-We have just build our DIY KIT, now let's program it!
+We have just built our DIY KIT, now let's program it!
 
 ## Step by Step Software Setup
 

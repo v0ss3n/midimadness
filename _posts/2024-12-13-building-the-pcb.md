@@ -54,11 +54,15 @@ In your kit you find 4 different types of resistors, they are colour coded with 
 
 Next we solder in the LED, be mindful of the polarity of the led! 
 the negative side (SHORT LEG) needs to be inserted in the SQUARE PAD! 
-the long side of the led will be in the round pas.
+the long side of the led will be in the round pad.
+
+![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fengineeringtutorial.com%2Fwp-content%2Fuploads%2F2016%2F07%2Fengineeringtutorial.com_light-emitting-diode-theory.png&f=1&nofb=1&ipt=dd60512a5665043dbfd28237ba533847518c912229ac4c739eedc6678a0f8099)
 
 ### **Pin Headers**
 
-The pin headers are there to keep the ESP32 in place so you can take the microcontroller in and out if needed. If you want to make sure the pin headers are not wiggeling, use some tape to keep the headers in place and adjust accordingly after soldering a few pins first.
+The pin headers are there to keep the ESP32 in place so you can take the microcontroller in and out if needed. If you want to make sure the pin headers are not wiggling, use some tape to keep the headers in place, or plug in the ESP32S3 and adjust accordingly after soldering a few pins first.
+
+![](https://einstronic.com/wp-content/uploads/2021/08/Header-Pin-Connector-Female-1x07-1.jpg)
 
 ### **Switch**
 
@@ -68,11 +72,13 @@ Solder the switch in the location of the PCB, wiggle the switch a bit back and f
 
 In the kit you find 2 audio jacks
 MIDI_TR_S1     Aaudio jack (flat type)                   midi output 
-Speaker_in1    Audio output jack (thonkiconn type        audio output
+Speaker_in1    Audio output jack (thonkiconn type)        audio output
 
 ### **Potentiometer**
 
-Solder the potentiometer at the location where the pcb shows the text "E_textile_tuner_1" If the potentiometer is struggeling to fit in the holes bend them over a bit with your hands to make it fit in the spot. Solder all the pads on the bottom (also the potentiometer mounting pads)
+Solder the potentiometer (knob) at the location where the pcb shows the text "E_textile_tuner_1" If the potentiometer is struggeling to fit in the holes bend them over a bit with your hands to make it fit in the spot. Solder all the pads on the bottom (also the potentiometer mounting pads)
+
+![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fd2t1xqejof9utc.cloudfront.net%2Fscreenshots%2Fpics%2Fcd30f3658baf22bc123727c0f45482f0%2Flarge.png&f=1&nofb=1&ipt=610249d54896abf65fa8a20d23063db217aaf14446d38a95432163609614cb6e)
 
 ### **Power Barrel Jack**
 
@@ -88,7 +94,9 @@ The voltage regulator is type L780SCV and we place it on the location where the 
 
 ### **Speaker and Bluetooth Antenna**
 
-Solder the speaker to the pads on the PCB, the black wire is connected to the swquare pad, the red wire to the circular pad. You can stick the speaker to the front side or the pack side of the Midi Madness Maker. The Bluetooth antenna can be added later when using Bluetooth functions. The ESP32 Bluetooth is already onboard but the antenna amplifies the signal so you can have more distance between source and reciever. 
+Solder the speaker to the pads on the PCB, the black wire is connected to the square pad, the red wire to the circular pad. You can stick the speaker to the front side or the pack side of the Midi Madness Maker. The Bluetooth antenna can be added later when using Bluetooth functions. The ESP32 Bluetooth is already onboard but the antenna amplifies the signal so you can have more distance between source and receiver. 
+
+![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fae01.alicdn.com%2Fkf%2FHTB1yiIDHVXXXXbQXFXXq6xXFXXXE%2F8ohm-1W-Mini-Speaker-Module-for-Phone-MP4-Navigator-PSP-Black-14-x-20mm.jpg&f=1&nofb=1&ipt=16fcb5d6e4bbfb98ecbdd93e3c0ee7f8e06c4fa465a5e0aca5f03ff87ad0fe55&ipo=images)
 
 ### **ESP32 Microcontroller**
 The ESP32S3's orientation is important: the USB-C port should face **away** from the pcb board.
