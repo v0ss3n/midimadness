@@ -26,7 +26,7 @@ int touchValues[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 int thresholds[] = { 80000, 80000, 80000, 80000, 80000, 80000, 80000, 80000 };
 
 // You can change the notes played, check out pitches.h for all options
-int pitches[] = { NOTE_A3, NOTE_B3, NOTE_C3, NOTE_D3, NOTE_E3, NOTE_F3, NOTE_F4, NOTE_A4 };
+int pitches[] = { NOTE_A3, NOTE_B3, NOTE_C3, NOTE_D3, NOTE_E3, NOTE_F3, NOTE_G3, NOTE_A4 };
 
 // Store last read values to detect freezing
 uint32_t lastTouchValues[8] = { 0 };

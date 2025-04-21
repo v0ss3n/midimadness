@@ -7,7 +7,15 @@ permalink: "/workshop-planning/"
 
 ## Workshop planning
 
-Day 1 - Friday April 4. Today we focus on soldering the electronics and getting started with e-textiles.
+| 11:00-11:30 | Introduction, program and the concepts of the day, examples. Demo of soldering, explanation of MIDI Madness website |
+| 11:30-12:30 | One starts with soldering the MIDI Madness Maker, making connectors and testing with pre-uploaded code. The other starts with e-textile sensor crafting, testing with the existing MIDI Madness set-up if needed |
+| 12:30-13:30 | Testing all of the MIDI Madness boards, and deciding in groups what kind of textile instrument you want to make: wearable, modular, stand-alone. Then work on the e-textiles together. Don't forget to think about the connection between the MIDI Madness Maker and the textile sensors - hard-soft connections can also be designed! |
+| 13:30-14:00 | Lunch break |
+| 14:00-15:00 | Make your own e-textile MIDI keyboard/interface! If you want, it's possible to change the MIDI notes that you're sending (or play around with the code if you know your way around the Arduino IDE) |
+| 15:00-15:15 | MIDI Madness jam! |
+| 15:15-15:30 | Clean up & wrap up | 
+
+<!-- Day 1 - Friday April 4. Today we focus on soldering the electronics and getting started with e-textiles.
 
 | Time | Program |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -24,7 +32,7 @@ Day 2 - Saturday April 5. Today we focus on making DIY textile interfaces, progr
 | 12:30-13:15 | Lunch break - pizza! |
 | 13:15-17:00 | Make your own e-textile MIDI keyboard/interface: wearable, modular, stand-alone |
 | 17:00-17:30 | MIDI Madness jam! |
-| 17:30-18:00 | Clean up & wrap up day 2 |
+| 17:30-18:00 | Clean up & wrap up day 2 | -->
 
 
 
