@@ -5,7 +5,7 @@ permalink: "/building-the-pcb/"
 ---
 
 ## MIDI Madness Maker V1
-Congratulations with your MIDI Madness Maker DIY kit! Let's get it up and running. Follow the steps below for a sucessful build. 
+Congratulations with your MIDI Madness Maker DIY kit! Let's get it up and running. Follow the steps below for a successful build. 
 
 ![]({{ site.baseurl }}/assets/images/midimadnessmaker.jpg)
 
@@ -94,7 +94,7 @@ The footprint on the board will tell you which one goes where.
 
 ### **Potentiometer**
 
-Solder the potentiometer (knob) at the location where the pcb shows the text "E_textile_tuner_1" If the potentiometer is struggeling to fit in the holes bend them over a bit with your hands to make it fit in the spot. Solder all the pads (also the potentiometer mounting pads). 
+Solder the potentiometer (knob) at the location where the pcb shows the text "E_textile_tuner_1" If the potentiometer is struggling to fit in the holes bend them over a bit with your hands to make it fit in the spot. Solder all the pads (also the potentiometer mounting pads). 
 
 ![](https://mm.digikey.com/Volume0/opasdata/d220001/derivates/2/002/703/MFG_PTV09A%28640x640%29.jpg)
 
@@ -121,9 +121,13 @@ Now, you need to do some hacking: we need to create a little bridge between the 
 
 ### **Speaker and Bluetooth Antenna**
 
-Solder the speaker to the pads on the PCB, the black wire is connected to the square pad, the red wire to the circular pad. Strip the wires so they're easier to solder. You can stick the speaker to the front or back side of the MIDI Madness Maker. The Bluetooth antenna can be added later when using Bluetooth functions. The ESP32 Bluetooth is already onboard but the antenna amplifies the signal so you can have more distance between source and receiver. 
+Solder the speaker to the pads on the PCB, the black wire is connected to the square pad, the red wire to the circular pad. Strip the wires so they're easier to solder. You can stick the speaker to the front or back side of the MIDI Madness Maker. 
 
 ![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fae01.alicdn.com%2Fkf%2FHTB1yiIDHVXXXXbQXFXXq6xXFXXXE%2F8ohm-1W-Mini-Speaker-Module-for-Phone-MP4-Navigator-PSP-Black-14-x-20mm.jpg&f=1&nofb=1&ipt=16fcb5d6e4bbfb98ecbdd93e3c0ee7f8e06c4fa465a5e0aca5f03ff87ad0fe55&ipo=images)
+
+The Bluetooth antenna can be added later when using Bluetooth functions. The ESP32 Bluetooth is already onboard but the antenna amplifies the signal so you can have more distance between source and receiver. You can clip it to the ESP32 as is done in the image below.
+
+![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flinuxgizmos.com%2Ffiles%2FXIAO-ESP32S3-antenna.jpg&f=1&nofb=1&ipt=97e8a728b4a2616daf0ea2c6ae17333e1a193b844df70d17996747aeb6198d8e)
 
 ### **ESP32 Microcontroller**
 The ESP32S3's orientation is important: the USB-C port should face **away** from the pcb board.
@@ -153,7 +157,7 @@ This is the easiest option, connect a USB-C cable from the microcontroller to yo
 
 
 - Power over USB using an external powerbank.
-  You can use a powerbank to power the MIDI Madness Maker! This is a great option for when you want to implement the kit into a garnment or object and you don't like to work with single use batteries. 
+  You can use a powerbank to power the MIDI Madness Maker! This is a great option for when you want to implement the kit into a garment or object and you don't like to work with single use batteries. 
 
 ## END OF THE BUILD GUIDE
 
