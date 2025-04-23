@@ -1,14 +1,14 @@
 /*
   Touch pins to MIDI notes
 
-  Plays a MIDI note when a touch pin is touched and modulates it based on the capacitance of that pin. Modulates volume based on analog pin 10.
-  If there is no device connected via Bluetooth, defaults to using local tone bleeps.
+  Plays a MIDI note when a touch pin is touched and modulates it based on the capacitance of that pin. 
+  Modulates volume based on the variable resistance sensor on pin A10.
+  If there is no device connected via Bluetooth, defaults to using local tone bleeps. In this case, the analog value on pin A10 is not used.
 
   Based on which keyboard you select in Garageband you may need to adjust notes. CC messages probably don't do anything for Drums
   
   to figure out what the touch value range is by touching/squeezing/stretching and releasing 
-  the touch pin and reading the values in the serial monitor. Change 
-  the threshold accordingly.
+  the touch pin and reading the values in the serial monitor. Change the threshold accordingly.
   
   Connect a touch sensor to pin T1, T2, T3, T4, T5, T6, T7, T8
   Connect a variable sensor to pin A10
@@ -44,7 +44,9 @@ int thresholds[] = { 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100
 bool noteActive[] = { false, false, false, false, false, false, false, false };  // Track active notes
 
 // You can change the notes played, check out pitches.h for all options
-int pitches[] = { NOTE_A3, NOTE_B3, NOTE_C3, NOTE_D3, NOTE_E3, NOTE_F3, NOTE_G3, NOTE_A4 };
+// int pitches[] = { NOTE_C3, NOTE_D3, NOTE_E3, NOTE_F3, NOTE_G3, NOTE_A3, NOTE_B3, NOTE_C4};
+// int pitches[] = { NOTE_C4, NOTE_D4, NOTE_E4, NOTE_F4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_C5};
+int pitches[] = { NOTE_C5, NOTE_D5, NOTE_E5, NOTE_F5, NOTE_G5, NOTE_A5, NOTE_B5, NOTE_C6};
 
 // MIDI note range (36-43 for T1-T8); change according to your device and wishes.
 int midiNotes[] = { 36, 37, 38, 39, 40, 41, 42, 43 };
@@ -95,15 +97,15 @@ void loop() {
       }
 
       // Constrain touch value for MIDI modulation
-      touchValues[i] = constrain(touchValues[i], 150000, 300000);
-      int midiModulation = map(touchValues[i], 150000, 300000, 0, 127);
+      touchValues[i] = constrain(touchValues[i], 150000, 200000);
+      int midiModulation = map(touchValues[i], 100000, 200000, 0, 127);
       MIDI.sendControlChange(1, midiModulation, 1);  // Modulate active note
 
 
       int pitch = pitches[i];  // Get base pitch from array
 
       // Map the touch sensor input (50000-200000) to pitch adjustment. change according to the detected capacitance and the pitch change that you want.
-      int pitchAdjustment = map(touchValues[i], 50000, 200000, 0, 200);
+      int pitchAdjustment = map(touchValues[i], 100000, 200000, 0, 200);
       pitch += pitchAdjustment;  // Adjust pitch
 
       totalPitch += pitch;  // Sum pitches
