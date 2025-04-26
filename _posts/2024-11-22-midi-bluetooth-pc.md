@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sending MIDI wirelessly to your computer"
-permalink: "/midi-bluetooth/"
+permalink: "/midi-bluetooth-pc/"
 ---
 
 There are multiple ways to turn your MIDI Madness Maker into a Bluetooth MIDI keyboard! The code used for the different examples is the same (MIDI-madness-BLE-keyboard.ino). Here the focus is on sending MIDI wirelessly to computers. 
