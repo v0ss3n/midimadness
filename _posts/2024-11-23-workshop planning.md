@@ -7,9 +7,9 @@ permalink: "/workshop-planning/"
 
 ## Workshop planning
 
-| 11:00-11:30 | Introduction, program and the concepts of the day, examples. Demo of soldering, explanation of MIDI Madness website |
-| 11:30-12:30 | One starts with soldering the MIDI Madness Maker, making connectors and testing with pre-uploaded code. The other starts with e-textile sensor crafting, testing with the existing MIDI Madness set-up if needed |
-| 12:30-13:30 | Testing all of the MIDI Madness boards, and deciding in groups what kind of textile instrument you want to make: wearable, modular, stand-alone. Then work on the e-textiles together. Don't forget to think about the connection between the MIDI Madness Maker and the textile sensors - hard-soft connections can also be designed! |
+| 11:00-11:45 | Introduction, program and the concepts of the day, examples. Demo of soldering, explanation of MIDI Madness website |
+| 11:45-13:00 | One starts with soldering the MIDI Madness Maker, making connectors and testing with pre-uploaded code. The other starts with e-textile sensor crafting, testing with the existing MIDI Madness set-up if needed |
+| 13:00-13:30 | Testing all of the MIDI Madness boards, and deciding in groups what kind of textile instrument you want to make: wearable, modular, stand-alone. Then work on the e-textiles together. Don't forget to think about the connection between the MIDI Madness Maker and the textile sensors - hard-soft connections can also be designed! |
 | 13:30-14:00 | Lunch break |
 | 14:00-15:00 | Make your own e-textile MIDI keyboard/interface! If you want, it's possible to change the MIDI notes that you're sending (or play around with the code if you know your way around the Arduino IDE) |
 | 15:00-15:15 | MIDI Madness jam! |
