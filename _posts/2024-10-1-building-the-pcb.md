@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Building the PCB"
+title: "1. Building the PCB"
 permalink: "/building-the-pcb/"
 ---
 
@@ -24,7 +24,7 @@ Make sure your kit comes with the following components:
 - 1x PCB MIDI Madness Maker
 - 1x ESP32S3
 - 2x Female pin headers
-- 1x Bluetooth Antenna (rectangle compoent with wire attached)
+- 1x Bluetooth Antenna (rectangle component with wire attached)
 - 4x Resistors
 - 1x Voltage Regulator L780SCV
 - 1x 100kΩ potentiometer
@@ -110,7 +110,7 @@ The Voltage Regulator is a later addition to the first iteration of the DIY kit,
 
 ![](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimg1.findic.com%2Fl7805cv-lqh79iwS-nqQd1DdEZ.jpg&f=1&nofb=1&ipt=09f2032b5704363f02a28078949b79d27367e25dc592a43ab85a6b1905bb8dc3)
 
-The voltage regulator is type L780SCV and we place it on the location where the diode was supposted to be soldered in on location D1. Position the regulator with the flat side towards the microcontroller. The outer two legs should now be soldered each in a round pad on the PCB, and the middle leg of the regulator is soldered to the outside of the potentiometer next to it.
+The voltage regulator is type L780SCV and we place it on the location where the diode was supposed to be soldered in on location D1. Position the regulator with the flat side towards the microcontroller. The outer two legs should now be soldered each in a round pad on the PCB, and the middle leg of the regulator is soldered to the outside of the potentiometer next to it.
 
 ![]({{ site.baseurl }}/assets/images/midi-regulator.jpg)
 

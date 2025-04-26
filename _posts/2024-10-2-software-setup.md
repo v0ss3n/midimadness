@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Software setup"
+title: "2. Software setup"
 permalink: "/software-setup/"
 ---
 
@@ -49,7 +49,7 @@ You can download the file from github, or copy the code into your Arduino IDE.
 
 ![]({{ site.baseurl }}/assets/images/Tone-bleeps-arduino.jpg)
 
-This code is fairly easy to understand. You can change notes to others or change the sensitivity of the touchpads in case you have other things connected to them such as E-textiles or conductive materials. T
+This code is fairly easy to understand. You can change notes to others or change the sensitivity of the touchpads in case you have other things connected to them such as E-textiles or conductive materials. 
 
 
 ## Next Steps
@@ -57,28 +57,6 @@ Now the PC should recognise the microcontroller from the drop down menu and allo
 
 ### Boot mode
 One thing to keep in mind with ESP32 is that sometimes they're suddenly in the wrong mode for programming. You can get back to boot mode by unplugging the board, then pressing and holding down the boot button (has a B next to it) on the board, then plugging it back in. Now it should work again :-)
-
-
-<!-- ## Touch keyboard
-The touch range example sounds like this:
-
-<div class="videowrapper"><video width="480" height="360" controls>
-  <source src="{{ site.baseurl }}/assets/videos/touch-range-sound.mp4" type="video/mp4"></video>
-</div>
-
-You can also connect something conductive, like a conductive spool knitted sample. Now the interaction is way more interesting!
-
-<div class="videowrapper"><video width="480" height="360" autoplay loop muted>
-  <source src="{{ site.baseurl }}/assets\videos\keyboard-glove.mp4" type="video/mp4"></video>
-</div> -->
-
-### Libraries
-Some code examples need libraries - they're at the top of the code so check it out there! For the BLE example you need to make a modification; click [here](https://v0ss3n.github.io/midimadness/midi-bluetooth/) for more on that.
-
-
-
-
-
 
 <!-- ## Touch keyboard
 The touch range example sounds like this:
@@ -97,8 +75,9 @@ You can also connect something conductive, like a conductive spool knitted sampl
 Some code examples need libraries - they're at the top of the code so check it out there! For the BLE example you need to make a modification; click [here](https://v0ss3n.github.io/midimadness/midi-bluetooth/) for more on that.
 
 ### Capacitive sensing
-If you're using capacitive touch sensing with the ESP32S3, there is a pretty big chance that the touch pins will freeze at some point. Luckily this is easy to deal with in code, because you can reset the touch pads. The way it detects frozen pins in this implementation is by checking if the 8 values read are the exact same values as read in the previous round. If they are the same, that's very suspicious, and a very likely indication that the touch pads are frozen. This fix has been made by Bart Jakobs (check out his MIDI Madness Maker library [here](https://github.com/bartjakobs/MidiMadnessMaker)). The fix is implemented in the example codes, but if you want to implement it yourself you need the following code.
-implement in code to restart cap sensing.
+If you're using capacitive touch sensing with the ESP32S3, there is a pretty big chance that the touch pins will freeze at some point. Luckily this is easy to deal with in code, because you can reset the touch pads. The way it detects frozen pins in this implementation is by checking if the 8 values read are the exact same values as read in the previous round. If they are the same, that's very suspicious, and a very likely indication that the touch pads are frozen. This fix has been made by Bart Jakobs (check out his MIDI Madness Maker library [here](https://github.com/bartjakobs/MidiMadnessMaker)). The fix is implemented in the example codes, but if you want to implement it yourself you need the following implemented in code to restart capacitive sensing. 
+
+Note that this depends on a similar code structure as in the examples to work. You can also start with one of the example codes and adapt it to your needs.
 
 - Above setup: `
 

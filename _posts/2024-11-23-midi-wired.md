@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "Sending MIDI to synthesizers"
+title: "Sending MIDI to hardware synths"
 permalink: "/midi-wired/"
 ---
 
-Check out the code examples for the Volca FM and Volca Sample - the first works on one channel and the second one works on 10 channels. If you brought your synthesizer with MIDI-IN: check out the MIDI guide for your device to see which example is the easiest to work from.
+There are plenty of synthesizers and modular synthesizer modules that allow you to send MIDI information like notes and CC messages to control parameters (like control voltage). Depending on the MIDI implementation of your synth or module, you can do a lot!
 
-If you want to do this wirelessly (for example because you're wearing it), you need two MIDI Madness Makers: one to connect to your synthesizer, the other to wear and to send the touch data to the one connected to the synth!
+Check out the code examples for the Volca FM and Volca Sample - the first works on one channel and the second one works on 10 channels. You can start with one of these examples and change MIDI notes, channels and CC messages according to the MIDI implementation of your device. 
+
+If you want to do this wirelessly (for example because you're wearing it), you need two MIDI Madness Makers: one to connect to your synthesizer, the other to wear and to send the touch data to the one connected to the synth. Or you need a long MIDI cable :)
 
 ## Examples
 ### MIDI with Volca FM
