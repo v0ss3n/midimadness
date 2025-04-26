@@ -22,8 +22,8 @@ Alternatively, you can use the BLE keyboard code in the Arduino (Code) folder.
 This example is based on a tutorial by Rico Kanthatham which you can find [here](https://caramel-adjustment-1d3.notion.site/Fabricademy-Electronic-Music-Xiao-ESP32C3-BLE-MIDI-Controller-1389bb27ac9880fbaa47e46e3878080e).
 
 ## Apps
-Android: download MIDI BLE Connect & SynprezFM II
-Apple: download Bluetooth MIDI Connect & Garageband
+- Android: download MIDI BLE Connect & SynprezFM II. Connect to your device via the BLE app and then go to SynprezFM
+- Apple: download Garageband; go to gears > advanced > bluetooth midi devices
 
 ### Using garageband
 You can use the BLE keyboard code example for various keyboards, drums and other instruments, but you may want to change the MIDI notes sent (check the charts below). MIDI CC doesn't always have an effect.
