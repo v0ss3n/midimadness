@@ -9,7 +9,7 @@ There are multiple ways to turn your MIDI Madness Maker into a Bluetooth MIDI ke
 ## Libraries (this part you only need to do once)
 You need to start by installing the BLE-MIDI library by Lathoub. **Make sure you do NOT install the other suggested libraries**; if you have additional BLE libraries compilation may fail so uninstall those if you have them :)
 
-To make it work with ESP32, you need to change line 116 in `BLEMIDI_ESP32.h` (`Arduino/libraries/BLE-MIDI/src/hardware/BLEMIDI_ESP32.h`). Add `.c_str()` at the end of the line, so it looks like this: `std::string rxValue = characteristic->getValue().c_str();`. What you can also do is just replace the entire BLE-MIDI library with this [BLE-MIDI folder](../assets/BLE-MIDI.zip), there it's already implemented (just unzip into your Arduino/libraries folder).
+To make it work with ESP32, you need to change line 116 in `BLEMIDI_ESP32.h` (`Arduino/libraries/BLE-MIDI/src/hardware/BLEMIDI_ESP32.h`). Add `.c_str()` at the end of the line, so it looks like this: `std::string rxValue = characteristic->getValue().c_str();`. What you can also do is just replace the entire BLE-MIDI library with this [BLE-MIDI folder]({{ site.baseurl }}/assets/BLE-MIDI.zip), there it's already implemented (just unzip into your Arduino/libraries folder).
 
 ### MidiMadnessMaker library by Bart Jakobs
 Programming genius Bart Jakobs made a nice library to use with the MIDI Madness Maker that sends MIDI notes and CC info wirelessly to your phone apps. [Check it out here](https://github.com/bartjakobs/MidiMadnessMaker); there is also a code example. 
