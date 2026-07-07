@@ -4,7 +4,6 @@ title: "1. Building the PCB"
 permalink: "/building-the-pcb/"
 ---
 
-## MIDI Madness Maker V1
 Congratulations with your MIDI Madness Maker DIY kit! Let's get it up and running. Follow the steps below for a successful build. 
 
 ![]({{ site.baseurl }}/assets/images/midimadnessmaker.jpg)
@@ -15,17 +14,20 @@ If you have never soldered before, and want to know the basics, we can recommend
 <!-- ![]({{ site.baseurl }}/assets/images/soldering.jpg) -->
 ![]({{ site.baseurl }}/assets/images/soldering 2.jpg)
 
-
+## MIDI Madness Maker V1
+The instructions below are based on the V1. Depending on the version you have, the content may vary slightly. If you are ever unsure, don't hesitate to reach out to Michelle or Veerle with questions!
 
 ## Step 1. Check your DIY Kit
 ### Bill of Materials
 
-Make sure your kit comes with the following components:
+Make sure your kit comes with the following components 
+
+V1:
 - 1x PCB MIDI Madness Maker
 - 1x ESP32S3
 - 2x Female pin headers
 - 1x Bluetooth Antenna (rectangle component with wire attached)
-- 4x Resistors
+- 4x Resistors (2x 47 Ohm, 1x 100 Ohm, 1x 470 Ohm. Have a look [here](https://www.calculator.net/resistor-calculator.html) if you are unsure about the value of the resistors)
 - 1x Voltage Regulator L780SCV
 - 1x 100kΩ potentiometer
 - 1x Audio jack Thonkiconn type
@@ -38,6 +40,23 @@ Make sure your kit comes with the following components:
 ![]({{ site.baseurl }}/assets/images/overview.jpg)
 
 (in this overview, pretend that the diode is a voltage regulator and imagine there also being 2x female pin headers).
+
+V3.2: 
+- 1x PCB MIDI Madness Maker
+- 1x ESP32S3
+- 2x Female pin headers
+- 1x Bluetooth Antenna (rectangle component with wire attached)
+- 4x Resistors (2x 47 Ohm, 1x 100 Ohm, 1x 470 Ohm. Have a look [here](https://www.calculator.net/resistor-calculator.html) if you are unsure about the value of the resistors)- 1x Voltage Regulator L780SCV
+- 1x 10kΩ or 100kΩ potentiometer
+- 1x Audio jack Thonkiconn type
+- 1x Audio jack flat pcb type
+- 1x Power barrel jack
+- 1x Slide switch
+- 1x LED
+- 2x Capacitors (22 uF and 2.2 uF)
+- 1x Diode (4148)
+- 1x Voltage regulator LM1117 (surface mount)
+
 
 ## Step 2. Building the DIY Kit
 ### Instructions
@@ -104,7 +123,7 @@ The barrel jack is used for powering the kit via external power sources that are
 
 ![](https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/322/MFG_DCJ200-10-A-K1-K.jpg)
 
-### **Voltage Regulator**
+### **Voltage Regulator V1 ONLY** 
 
 The Voltage Regulator is a later addition to the first iteration of the DIY kit, because we wanted to power the board via 9V battery. Our microcontroller is only able to handle 5V maximum, so therefore we use the Voltage Regulator to step down the 9V to 5V. 
 
@@ -118,6 +137,9 @@ Now, you need to do some hacking: we need to create a little bridge between the 
 
 ![]({{ site.baseurl }}/assets/images/bridge.jpg)
 
+### **Voltage Regulator V3.2**
+In V3.2, there is one surface mount component, which is the voltage regulator. To solder it, it is easiest to first add some solder to the biggest pad at the top of the component. Then you put the component in place, and heat up the solder at the top, so that the component gets stuck in the correct position. If it is not properly aligned yet, you simply heat up the solder at the top again and move the part until it is aligned. When it is aligned, you can solder the three other legs. 
+
 
 ### **Speaker and Bluetooth Antenna**
 
@@ -129,7 +151,7 @@ The Bluetooth antenna can be added later when using Bluetooth functions. The ESP
 
 ![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flinuxgizmos.com%2Ffiles%2FXIAO-ESP32S3-antenna.jpg&f=1&nofb=1&ipt=97e8a728b4a2616daf0ea2c6ae17333e1a193b844df70d17996747aeb6198d8e)
 
-### **ESP32 Microcontroller**
+### **ESP32S3 Microcontroller**
 The ESP32S3's orientation is important: the USB-C port should face **away** from the pcb board.
 
 ### **DONE!**
