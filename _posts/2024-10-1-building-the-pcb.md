@@ -137,15 +137,22 @@ Now, you need to do some hacking: we need to create a little bridge between the 
 
 ![]({{ site.baseurl }}/assets/images/bridge.jpg)
 
-### **Voltage Regulator V3.2**
+### **Voltage Regulator V3.2 ONLY**
 In V3.2, there is one surface mount component, which is the voltage regulator. To solder it, it is easiest to first add some solder to the biggest pad at the top of the component. Then you put the component in place, and heat up the solder at the top, so that the component gets stuck in the correct position. If it is not properly aligned yet, you simply heat up the solder at the top again and move the part until it is aligned. When it is aligned, you can solder the three other legs. 
 
+### **Capacitors V3.2 ONLY**
+The capacitors have an orientation (plus and minus), which is written on the component and on the board. C1 is 22uF, C2 is 2.2uF.
 
-### **Speaker and Bluetooth Antenna**
+![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ebayimg.com%2Fimages%2Fg%2FuBYAAOSwuyNiUBLL%2Fs-l500.png&f=1&nofb=1&ipt=412cfe7927bf91be4f48df164a468d532a6f7698b27526b11d34195c42c6e2ce)
+
+### **Speaker (V1 ONLY) and Bluetooth Antenna**
 
 Solder the speaker to the pads on the PCB, the black wire is connected to the square pad, the red wire to the circular pad. Strip the wires so they're easier to solder. You can stick the speaker to the front or back side of the MIDI Madness Maker. 
 
+In later versions, we got rid of the on-board speaker, since there is an on-board audio jack already. 
+
 ![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fae01.alicdn.com%2Fkf%2FHTB1yiIDHVXXXXbQXFXXq6xXFXXXE%2F8ohm-1W-Mini-Speaker-Module-for-Phone-MP4-Navigator-PSP-Black-14-x-20mm.jpg&f=1&nofb=1&ipt=16fcb5d6e4bbfb98ecbdd93e3c0ee7f8e06c4fa465a5e0aca5f03ff87ad0fe55&ipo=images)
+
 
 The Bluetooth antenna can be added later when using Bluetooth functions. The ESP32 Bluetooth is already onboard but the antenna amplifies the signal so you can have more distance between source and receiver. You can clip it to the ESP32 as is done in the image below.
 
