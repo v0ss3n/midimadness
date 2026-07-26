@@ -10,6 +10,13 @@ Check out the code examples for the Volca FM and Volca Sample - the first works 
 
 If you want to do this wirelessly (for example because you're wearing it), you need two MIDI Madness Makers: one to connect to your synthesizer, the other to wear and to send the touch data to the one connected to the synth. Or you need a long MIDI cable :)
 
+## MIDI TRS
+Depending on the hardware synth you have, you may need a different MIDI cable. The most common (and current MIDI standard) is Type A. This is also how the MIDI Madness Maker is set up. There is also a type B, which flips the source and sink ([https://minimidi.world/] explains it nicely). This is a little annoying, because it means that you may need a different cable depending on which synth you have, but luckily you don't need to resolder your MIDI Madness Maker if you want to use a different synth ;). 
+
+This is where we buy our MIDI-TRS cables: <https://www.thonk.co.uk/shop/befaco-midi-trs-adaptor-cables/> (you can also get them at [Thomann](https://www.thomann.nl/befaco_trs_midi_cable_a.htm)). 
+
+If you have a synth that uses a TRS input as well, you can use a regular audio cable (or a TRS-TRS MIDI cable if you want to be fancy, like [this one](https://www.thomann.nl/boss_bcc_1_3535_trs_trs_midi_cable.htm)). If you have a type B TRS input, you can use a TRS-A/TRS-B dongle which flips the tip and the ring for you ([like this one](https://midiamsterdam.nl/retrokits-trs-a-to-trs-b-dongle.html)). Alternatively, you can do some hacking on an audio cable by cutting the tip and ring wires, connecting the tip to the ring wire and vice versa (always check with a multimeter if you did it correctly).
+
 ## Examples
 ### MIDI with Volca FM
 

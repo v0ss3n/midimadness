@@ -1,7 +1,8 @@
----
+<!-- ---
 layout: post
 title: "Workshop planning"
 permalink: "/workshop-planning/"
+
 ---
 
 
@@ -13,7 +14,7 @@ permalink: "/workshop-planning/"
 | 13:30-14:00 | Lunch break |
 | 14:00-15:00 | Make your own e-textile MIDI keyboard/interface! If you want, it's possible to change the MIDI notes that you're sending (or play around with the code if you know your way around the Arduino IDE) |
 | 15:00-15:15 | MIDI Madness jam! |
-| 15:15-15:30 | Clean up & wrap up | 
+| 15:15-15:30 | Clean up & wrap up |  -->
 
 <!-- Day 1 - Friday April 4. Today we focus on soldering the electronics and getting started with e-textiles.
 
