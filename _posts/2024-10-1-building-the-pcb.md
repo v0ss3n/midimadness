@@ -18,9 +18,14 @@ If you have never soldered before, and want to know the basics, we can recommend
 The instructions below are based on the V1. Depending on the version you have, the content may vary slightly. If you are ever unsure, don't hesitate to reach out to Michelle or Veerle with questions!
 
 ## Step 1. Check your DIY Kit
-### Bill of Materials
 
-Make sure your kit comes with the following components 
+#### Good to know! 
+Up until V3.2, MIDI Madness Maker kits come with 2x 47 Ohm resistors for the MIDI 3.3V (R2) and TX lines (R3). In our latest experience, this does not work with all hardware synthesizers (for example, it works fine with Korg's Volca but doesn't work with a Roland S-1). 
+To increase compatibility, it's best to lower the resistors to 33 Ohm each (you can even use 10 Ohm for the TX line, R3). Alternatively, you can put two 47 Ohm resistors in parallel through the same holes that you put one resistor through (then it's approx. 24 Ohm on each) if you have them (or two 66 Ohm resistors for 33 Ohm) if you don't have the exact resistor. This increases the MIDI signal strength.
+
+
+### Bill of Materials
+Make sure your kit comes with the following components:
 
 V1:
 - 1x PCB MIDI Madness Maker
